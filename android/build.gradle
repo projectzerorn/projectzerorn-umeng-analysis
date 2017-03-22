@@ -48,6 +48,6 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: '*.jar', exclude: 'android-support-multidex.jar')
+    compile 'com.umeng.analytics:analytics:latest.integration'
     compile 'com.facebook.react:react-native:+'
 }
