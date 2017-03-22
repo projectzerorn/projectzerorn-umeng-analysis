@@ -1,3 +1,10 @@
 {
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "name":"projeczerorn-umeng-UApp",
+  "license": "ISC",
+   "main": "index.js",
+    "keywords": [
+    "react-native",
+    "umeng-analysis",
+  ],
 }
