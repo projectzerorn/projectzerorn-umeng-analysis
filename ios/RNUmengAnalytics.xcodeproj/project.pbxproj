@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7FCD5AA11E8269B80054DEC2 /* UMNative.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCD5AA01E8269B80054DEC2 /* UMNative.m */; };
-		7FCD5AA31E8269E80054DEC2 /* UMMobClick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FCD5AA21E8269E80054DEC2 /* UMMobClick.framework */; };
 		7FCD5AA61E826B730054DEC2 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FCD5AA51E826B730054DEC2 /* CoreTelephony.framework */; };
+		7FCD5B8E1E8277780054DEC2 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FCD5B8D1E8277780054DEC2 /* libz.tbd */; };
+		7FCD5B951E82784D0054DEC2 /* UMMobClick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FCD5B8F1E82780B0054DEC2 /* UMMobClick.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,10 +26,11 @@
 
 /* Begin PBXFileReference section */
 		7FCD5A931E82687F0054DEC2 /* libRNUmengAnalytics.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNUmengAnalytics.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		7FCD5A9F1E8269B80054DEC2 /* UMNative.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMNative.h; sourceTree = "<group>"; };
-		7FCD5AA01E8269B80054DEC2 /* UMNative.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMNative.m; sourceTree = "<group>"; };
-		7FCD5AA21E8269E80054DEC2 /* UMMobClick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMMobClick.framework; sourceTree = "<group>"; };
 		7FCD5AA51E826B730054DEC2 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		7FCD5B8D1E8277780054DEC2 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		7FCD5B8F1E82780B0054DEC2 /* UMMobClick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMMobClick.framework; sourceTree = "<group>"; };
+		7FCD5B911E8278190054DEC2 /* UMNative.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMNative.h; sourceTree = "<group>"; };
+		7FCD5B941E8278340054DEC2 /* UMNative.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UMNative.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,8 +38,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FCD5B951E82784D0054DEC2 /* UMMobClick.framework in Frameworks */,
+				7FCD5B8E1E8277780054DEC2 /* libz.tbd in Frameworks */,
 				7FCD5AA61E826B730054DEC2 /* CoreTelephony.framework in Frameworks */,
-				7FCD5AA31E8269E80054DEC2 /* UMMobClick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,9 +67,9 @@
 		7FCD5A951E82687F0054DEC2 /* RNUmengAnalytics */ = {
 			isa = PBXGroup;
 			children = (
-				7FCD5AA21E8269E80054DEC2 /* UMMobClick.framework */,
-				7FCD5A9F1E8269B80054DEC2 /* UMNative.h */,
-				7FCD5AA01E8269B80054DEC2 /* UMNative.m */,
+				7FCD5B941E8278340054DEC2 /* UMNative.m */,
+				7FCD5B911E8278190054DEC2 /* UMNative.h */,
+				7FCD5B8F1E82780B0054DEC2 /* UMMobClick.framework */,
 			);
 			path = RNUmengAnalytics;
 			sourceTree = "<group>";
@@ -75,6 +77,7 @@
 		7FCD5AA41E826B730054DEC2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7FCD5B8D1E8277780054DEC2 /* libz.tbd */,
 				7FCD5AA51E826B730054DEC2 /* CoreTelephony.framework */,
 			);
 			name = Frameworks;
@@ -138,7 +141,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7FCD5AA11E8269B80054DEC2 /* UMNative.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
