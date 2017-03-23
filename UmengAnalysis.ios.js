@@ -1,7 +1,7 @@
 import {
   NativeModules
 } from 'react-native';
-const UMNative = NativeModules.UmengNativeModule;
+const UMNative = NativeModules.UMNative;
 export default class UmengAnalysis {
 
 
