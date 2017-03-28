@@ -141,12 +141,14 @@ public class UmengNativeModule extends ReactContextBaseJavaModule {
     @ReactMethod
     @SuppressWarnings("unused")
     public void onPageBegin(String pageName) {
+        MobclickAgent.onResume(mContext);
         MobclickAgent.onPageStart(pageName);
     }
 
     @ReactMethod
     @SuppressWarnings("unused")
     public void onPageEnd(String pageName) {
+        MobclickAgent.onPause(mContext);
         MobclickAgent.onPageEnd(pageName);
     }
 
