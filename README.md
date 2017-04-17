@@ -4,6 +4,45 @@
 友盟应用统计- react-native
 
 安装 ` npm install --save projectzerorn-umeng-analysis@https://github.com//projectzerorn/projectzerorn-umeng-analysis.git`
+##### **android项目引入本库**
+1. **首先去下载[android版react native的sdk](http://dev.umeng.com/analytics/h5/sdk-download)**
+&ensp;&ensp;&ensp;&ensp;本库使用的是版本号：1.0,发布日期：2016-12-2的Android Analytics React Native App SDK.
+2.**配置manifest和appkey**
+ ```
+     <manifest……>
+        <uses-sdk android:minSdkVersion="4"></uses-sdk>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
+    <application ……>
+    ……
+    <activity ……/>
+    <meta-data android:value="YOUR_APP_KEY" android:name="UMENG_APPKEY"></meta-data>
+    <meta-data android:value="Channel ID" android:name="UMENG_CHANNEL"/>
+    </application>
+    </manifest>
+
+
+ ```
+&ensp;&ensp;&ensp;&ensp;不在manifest里配置友盟的appkey，而在Activity中配置：只需在程序启动时的Activity中调用此接口实现:MobclickAgent.startWithConfigure(UMAnalyticsConfig config);
+
+3.**java代码配置**
+&ensp;&ensp;&ensp;&ensp;React Native的android启动入口页面,使用ReactInstanceManager对象添加UmengReactPackage. BaseProjectReactNativeActivity参考代码如下
+```
+       mReactInstanceManager = ReactInstanceManager.builder()
+                .setApplication(getApplication())
+                .setBundleAssetName("index.android.bundle")
+                .setJSMainModuleName("index.android")
+                .addPackage(new UmengReactPackage())
+                .setUseDeveloperSupport(isReactNativeUseLocalServer
+                .setInitialLifecycleState(LifecycleState.RESUMED)
+                .build();
+
+```
+
+4.**js代码引用**
+&ensp;&ensp;&ensp;&ensp;跟下面的ios的js代码引用保持一致
 
 ##### **iOS项目引入本库(手动引入xcode)**
 
