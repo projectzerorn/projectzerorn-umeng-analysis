@@ -26,6 +26,7 @@
 不在manifest里配置友盟的appkey，也可以在Activity中配置：只需在程序启动时的Activity中调用此接口实现:MobclickAgent.startWithConfigure(UMAnalyticsConfig config);
 
 2.**java代码配置**
+
 React Native的android启动入口页面,使用ReactInstanceManager对象添加UmengReactPackage. BaseProjectReactNativeActivity参考代码如下
 ```
        mReactInstanceManager = ReactInstanceManager.builder()
@@ -53,8 +54,8 @@ dependencies {
 ```
 4.**配置android项目settings.gradle**
 ```
-project(':projectzerorn-umeng-push').projectDir = new File(rootProject.projectDir, '../../node_modules/projectzerorn-umeng-push/android/')
 include ':projectzerorn-umeng-analysis'
+project(':projectzerorn-umeng-analysis').projectDir = new File(rootProject.projectDir, '../../node_modules/projectzerorn-umeng-analysis/android')
 ```
 5.**js代码引用**
 跟下面的ios的js代码引用保持一致
