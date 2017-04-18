@@ -5,9 +5,7 @@
 
 安装 ` npm install --save projectzerorn-umeng-analysis@https://github.com//projectzerorn/projectzerorn-umeng-analysis.git`
 ##### **android项目引入本库**
-1. **首先去下载[android版react native的sdk](http://dev.umeng.com/analytics/h5/sdk-download)**
-&ensp;&ensp;&ensp;&ensp;本库使用的是版本号：1.0,发布日期：2016-12-2的Android Analytics React Native App SDK.
-2.**配置manifest和appkey**
+1. 清单文件配置
  ```
      <manifest……>
         <uses-sdk android:minSdkVersion="4"></uses-sdk>
@@ -25,10 +23,10 @@
 
 
  ```
-&ensp;&ensp;&ensp;&ensp;不在manifest里配置友盟的appkey，而在Activity中配置：只需在程序启动时的Activity中调用此接口实现:MobclickAgent.startWithConfigure(UMAnalyticsConfig config);
+不在manifest里配置友盟的appkey，也可以在Activity中配置：只需在程序启动时的Activity中调用此接口实现:MobclickAgent.startWithConfigure(UMAnalyticsConfig config);
 
-3.**java代码配置**
-&ensp;&ensp;&ensp;&ensp;React Native的android启动入口页面,使用ReactInstanceManager对象添加UmengReactPackage. BaseProjectReactNativeActivity参考代码如下
+2.**java代码配置**
+React Native的android启动入口页面,使用ReactInstanceManager对象添加UmengReactPackage. BaseProjectReactNativeActivity参考代码如下
 ```
        mReactInstanceManager = ReactInstanceManager.builder()
                 .setApplication(getApplication())
@@ -40,9 +38,26 @@
                 .build();
 
 ```
-
-4.**js代码引用**
-&ensp;&ensp;&ensp;&ensp;跟下面的ios的js代码引用保持一致
+React Native的android启动入口页面，onCreate()方法初始化友盟统计,参考代码如下
+```
+ MobclickAgent.setDebugMode(false);
+ MobclickAgent.openActivityDurationTrack(false);
+ MobclickAgent.setSessionContinueMillis(1000);
+ MobclickAgent.setScenarioType(this,MobclickAgent.EScenarioType.E_UM_NORMAL);
+```
+3.**配置android项目build.gradle**
+```
+dependencies {
+    compile project(':projectzerorn-umeng-analysis')
+}
+```
+4.**配置android项目settings.gradle**
+```
+project(':projectzerorn-umeng-push').projectDir = new File(rootProject.projectDir, '../../node_modules/projectzerorn-umeng-push/android/')
+include ':projectzerorn-umeng-analysis'
+```
+5.**js代码引用**
+跟下面的ios的js代码引用保持一致
 
 ##### **iOS项目引入本库(手动引入xcode)**
 
