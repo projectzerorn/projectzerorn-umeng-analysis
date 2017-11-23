@@ -64,8 +64,6 @@ project(':projectzerorn-umeng-analysis').projectDir = new File(rootProject.proje
 
 1.  **导入SDK**
 
-   将文件夹中的 `UMNative.h`、`UMNative.m` 和 `UMMobClick.framework` 添加到 目标iOS 工程中。
-
    请在你的工程目录结构中，添加友盟统计框架，在选项TARGETS--> Build Phases-->Link Binary With Libraries-->Add Other，选择文件UMMobClick.framework文件并选择确认；添加系统依赖框架(Framework)和编译器选项 TARGETS-->Build Phases-->Link Binary With Libraries--> + -->CoreTelephony.framework libz.tbd libsqlite.tbd
 
 2. ###  配置 *AppDelegate.m (*代表你的工程名字)
